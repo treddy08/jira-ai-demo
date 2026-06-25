@@ -1,0 +1,16 @@
+name: Update Jira with AI Analysis
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - develop
+
+jobs:
+  jira-analysis:
+    uses: rhpds/rhpds-workflows/.github/workflows/jira-ai-update.yml@main
+    secrets:
+      MAAS_API_KEY: ${{ secrets.PH_MAAS_API_TOKEN }}
+      JIRA_API_TOKEN: ${{ secrets.PH_JIRA_API_TOKEN }}
+      JIRA_EMAIL: ${{ secrets.PH_JIRA_API_USER }}
